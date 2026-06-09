@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FULLSTACK.DEV | Portfolio Elite</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Geist:wght@300;400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#00ddd6",
+                    "tertiary": "#d1bcff",
+                    "on-secondary-fixed-variant": "#00504d",
+                    "on-primary-container": "#ffffff",
+                    "on-surface-variant": "#c1c6d7",
+                    "secondary-fixed": "#47faf3",
+                    "surface-dim": "#10131b",
+                    "on-tertiary-fixed-variant": "#5700c9",
+                    "surface-container-highest": "#32353d",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#272a32",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary-container": "#ffffff",
+                    "surface-container-low": "#181b23",
+                    "error": "#ffb4ab",
+                    "on-background": "#e0e2ed",
+                    "secondary-fixed-dim": "#00ddd6",
+                    "surface": "#10131b",
+                    "surface-container-lowest": "#0b0e15",
+                    "primary-fixed-dim": "#aec6ff",
+                    "on-surface": "#e0e2ed",
+                    "surface-tint": "#aec6ff",
+                    "on-secondary": "#003735",
+                    "outline": "#8b90a0",
+                    "tertiary-container": "#884fff",
+                    "on-secondary-fixed": "#00201f",
+                    "on-secondary-container": "#005d5a",
+                    "surface-bright": "#363942",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#e9ddff",
+                    "inverse-surface": "#e0e2ed",
+                    "background": "#10131b",
+                    "tertiary-fixed-dim": "#d1bcff",
+                    "on-primary-fixed": "#001a43",
+                    "inverse-primary": "#0059c5",
+                    "primary": "#aec6ff",
+                    "on-tertiary": "#3c0090",
+                    "on-tertiary-fixed": "#23005b",
+                    "primary-container": "#0070f3",
+                    "outline-variant": "#414754",
+                    "surface-container": "#1c1f27",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#32353d",
+                    "secondary": "#47faf3",
+                    "inverse-on-surface": "#2d3039",
+                    "on-primary-fixed-variant": "#004397",
+                    "on-primary": "#002e6b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap-mobile": "80px",
+                    "section-gap-desktop": "160px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-xl-mobile": ["Sora"],
+                    "body-lg": ["Geist"],
+                    "display-lg": ["Sora"],
+                    "body-md": ["Geist"],
+                    "headline-xl": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "code-label": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "code-label": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #10131b;
+            color: #e0e2ed;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(28, 31, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-hover:hover {
+            border-color: #47faf3;
+            box-shadow: 0 0 20px rgba(71, 250, 243, 0.15);
+            transform: translateY(-4px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 112, 243, 0.1) 0%, transparent 70%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-secondary/30">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 transition-all duration-300" id="top-bar">
+<div class="flex justify-between items-center px-6 py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Logo" class="w-8 h-8" src="data:image/png;base64,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"/>
+<span class="font-headline-lg text-headline-lg font-black tracking-tighter text-primary">FULLSTACK.DEV</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-bold font-body-md transition-all duration-300" href="#inicio">Inicio</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md transition-all duration-300" href="#sobre-mi">Sobre mí</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md transition-all duration-300" href="#proyectos">Proyectos</a>
+<a class="text-on-surface-variant hover:text-secondary font-body-md transition-all duration-300" href="#servicios">Servicios</a>
+<a class="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold font-body-md hover:opacity-80 scale-95 active:scale-90 transition-all" href="#contacto">Contacto</a>
+</nav>
+<button class="md:hidden text-primary" id="menu-toggle">
+<span class="material-symbols-outlined text-4xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Mobile Navigation Drawer -->
+<div class="fixed inset-0 z-[60] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300" id="drawer">
+<div class="fixed left-0 top-0 h-full w-64 bg-surface-container-highest dark:bg-surface-container-highest rounded-r-xl shadow-2xl transform -translate-x-full transition-transform duration-300">
+<div class="p-6">
+<div class="font-headline-lg text-headline-lg text-primary mb-8">MENU</div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-4 text-secondary bg-secondary/10 font-bold p-3 rounded-xl" href="#inicio">
+<span class="material-symbols-outlined">home</span> Inicio
+                    </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 p-3 rounded-xl transition-all" href="#sobre-mi">
+<span class="material-symbols-outlined">person</span> Sobre mí
+                    </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 p-3 rounded-xl transition-all" href="#proyectos">
+<span class="material-symbols-outlined">code</span> Proyectos
+                    </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 p-3 rounded-xl transition-all" href="#servicios">
+<span class="material-symbols-outlined">bolt</span> Servicios
+                    </a>
+<a class="flex items-center gap-4 text-on-surface-variant hover:bg-white/5 p-3 rounded-xl transition-all" href="#contacto">
+<span class="material-symbols-outlined">mail</span> Contacto
+                    </a>
+</nav>
+</div>
+</div>
+</div>
+<main>
+<!-- 1. Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="inicio">
+<div class="absolute inset-0 z-0">
+<img alt="Cyber Background" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd-rRMjai9EYVc1GCWcLbbavsmz37IlHOG0gpVjppicism2XwNl7ALMXOcPf0MfBUQDJGOFDfKsk3KrZmiPSnQQB0DaexxobJTFunsbEjkM_6g-4RO38htueQbfnsD144IBfjPvp_ego5I-5gbniHkDPMYa4_sBB6Fm2JMWqkFISriaUZnKIhln8c-1Lr7yNeyvt_xMJPKvkEXZdFyusB8dPt3ubQNkn3hdjUyjPvTFdL-XiqXwTyCRKfNaE2Tugw5uDZ02UA4mqmN"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-secondary/20 bg-secondary/5 text-secondary font-code-label text-code-label">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+                        DISPONIBLE PARA PROYECTOS
+                    </div>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                        Construyendo el <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Futuro Digital</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Desarrollador Full-Stack especializado en arquitecturas escalables y experiencias de usuario inmersivas. Transformo ideas complejas en soluciones técnicas elegantes.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold font-headline-lg flex items-center gap-2 hover:brightness-125 transition-all" href="#proyectos">
+                            Ver Proyectos <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="border border-secondary text-secondary px-8 py-4 rounded-xl font-bold font-headline-lg hover:bg-secondary/10 transition-all" href="#contacto">
+                            Hablemos
+                        </a>
+</div>
+</div>
+<div class="hidden md:flex justify-center animate-float">
+<div class="relative w-[500px] h-[500px]">
+<div class="absolute inset-0 bg-secondary/10 blur-[100px] rounded-full"></div>
+<img class="w-full h-full object-cover rounded-3xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="A high-resolution screen displaying complex code in a dark mode IDE, featuring syntax highlighting in electric blue and neon cyan. The background is a blurred tech office setting with soft bokeh lights, creating a professional and focused atmosphere. The image emphasizes the precision and technical depth of full-stack development within a modern digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZsPLzXWPH6EVtWQlyVCG3BKvKt_EeKEtpXFTqKR7NPziXDYy9guW2yNBgDSp9ZA08GAlec3INiJamH0IWKCF5-InflPwUoITZhpAUuQR_cRlgkqlzhCXUd50_Uzq_DCzaLoCBpBMhEkIOxYmXc6wAvY2l9P77nccAM8gsKpXcR5TTmom28kCySg9OxWe9eGJBUGtDqk1dnwIYvv-6c9yY4n55MeiHlXYBKrXCqUPd5mRjA9JGseEYzZSK3nCPiJwt5_5Hb6V7JvRZ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. About Me Section -->
+<section class="py-section-gap-desktop bg-surface-container-low" id="sobre-mi">
+<div class="max-w-container-max mx-auto px-6">
+<div class="mb-16">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">Sobre mí</h2>
+<div class="h-1 w-20 bg-secondary rounded-full"></div>
+</div>
+<div class="grid lg:grid-cols-12 gap-8">
+<!-- Bio & Timeline -->
+<div class="lg:col-span-8 space-y-8">
+<div class="glass-panel p-8 rounded-2xl">
+<p class="font-body-lg text-body-lg leading-relaxed text-on-surface-variant">
+                                Con más de 8 años de experiencia en el ecosistema digital, he liderado equipos técnicos para startups de alto crecimiento y empresas consolidadas. Mi enfoque combina la rigurosidad del backend con la fluidez creativa del frontend.
+                            </p>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="glass-panel p-6 rounded-2xl text-center glow-hover transition-all">
+<div class="text-secondary font-display-lg text-[40px] mb-2">50+</div>
+<div class="font-code-label text-code-label text-on-surface-variant">PROYECTOS EXITOSOS</div>
+</div>
+<div class="glass-panel p-6 rounded-2xl text-center glow-hover transition-all">
+<div class="text-secondary font-display-lg text-[40px] mb-2">8+</div>
+<div class="font-code-label text-code-label text-on-surface-variant">AÑOS DE CÓDIGO</div>
+</div>
+<div class="glass-panel p-6 rounded-2xl text-center glow-hover transition-all">
+<div class="text-secondary font-display-lg text-[40px] mb-2">12+</div>
+<div class="font-code-label text-code-label text-on-surface-variant">TECNOLOGÍAS CORE</div>
+</div>
+</div>
+</div>
+<!-- Skills Cloud -->
+<div class="lg:col-span-4 glass-panel p-8 rounded-2xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Skills Stack</h3>
+<div class="flex flex-wrap gap-3">
+<!-- Skill Chips -->
+<span class="px-4 py-2 bg-surface-container-highest border border-secondary/30 rounded-full font-code-label text-code-label text-secondary">React.js</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-primary/30 rounded-full font-code-label text-code-label text-primary">Node.js</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-tertiary/30 rounded-full font-code-label text-code-label text-tertiary">TypeScript</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-secondary/30 rounded-full font-code-label text-code-label text-secondary">Next.js</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-primary/30 rounded-full font-code-label text-code-label text-primary">PostgreSQL</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-tertiary/30 rounded-full font-code-label text-code-label text-tertiary">AWS</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-secondary/30 rounded-full font-code-label text-code-label text-secondary">Docker</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-primary/30 rounded-full font-code-label text-code-label text-primary">GraphQL</span>
+<span class="px-4 py-2 bg-surface-container-highest border border-tertiary/30 rounded-full font-code-label text-code-label text-tertiary">TailwindCSS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Projects Gallery -->
+<section class="py-section-gap-desktop relative overflow-hidden" id="proyectos">
+<div class="max-w-container-max mx-auto px-6">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">Proyectos Destacados</h2>
+<div class="h-1 w-20 bg-secondary rounded-full"></div>
+</div>
+<a class="text-secondary font-code-label text-code-label hover:underline" href="#">VER TODO EL ARCHIVO →</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group glass-panel rounded-2xl overflow-hidden glow-hover transition-all duration-500">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A futuristic dashboard interface with dark mode aesthetics, featuring complex data visualizations, real-time charts, and minimalist UI elements. The color scheme is dominated by deep navy and charcoal, with neon cyan and electric blue accents highlighting key metrics. The style is ultra-modern and clean, suggesting a high-performance SaaS application or enterprise-grade software solution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNbDe4WH7LVzFf9F4ph9N2ZoFS7LK6YyAJoRZJrbwsyGCQSansfrXbRHufveV-0lQUsD1HfIXbIyIqbevKn8IX7-3zvhXjyU4Ipx0xYg-OJsthuJxQIEYQmqbxGTEAuIf8o7LIm2IuisZV25RLW2rccn0DT0KOc_yAjppaW2KYwyx_hp9ZZpWFoZx9zqJv2grPsyR-xHHUa6PKXu2ER2lV0TTWDy3_cAAxJFQG_OaINXvYsNrKgxDlrVL72H4qkLqiS63RIzvll7Ci"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] uppercase tracking-widest font-code-label text-secondary border border-secondary/20 px-2 py-0.5 rounded">SaaS</span>
+<span class="text-[10px] uppercase tracking-widest font-code-label text-primary border border-primary/20 px-2 py-0.5 rounded">AI</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">NeoMatrix Dashboard</h3>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-2">Plataforma de análisis predictivo con integración de modelos de lenguaje a gran escala.</p>
+<div class="flex items-center gap-4">
+<a class="text-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">terminal</span></a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group glass-panel rounded-2xl overflow-hidden glow-hover transition-all duration-500">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A sleek mobile application interface for a crypto wallet, showcasing elegant typography, glassmorphism card designs, and vibrant gradient backgrounds. The UI uses a sophisticated dark theme with glowing borders around interactive elements. The overall aesthetic is clean, secure, and technologically advanced, typical of high-end fintech digital products." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwpSR0UWFGsDVsEtT7dRf2727BC-6IlRQS4fKrtKRn0LWkc0Pi9OgyW4vR5Wr4q6Nj-dYqMDkD4RnpD8rocubzJruotKHbOxzlMXyqHEOPVLbAiXzpFLzl3d9qpXrbD6Gs2VyGO96fLWMg95sABB6uDVd-8xtHGr_GUApYiP8o-lFCLwgDV4wnUqtGYoGgXTnAEq5kPlFrkg33ptVH79kUTnF5FURsA-4FmSrYdFWMuyDN5Ljiat0rCpVdHqGRJsX4GlvNZLzpkWCa"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] uppercase tracking-widest font-code-label text-secondary border border-secondary/20 px-2 py-0.5 rounded">Fintech</span>
+<span class="text-[10px] uppercase tracking-widest font-code-label text-primary border border-primary/20 px-2 py-0.5 rounded">Blockchain</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">Ether Flow Wallet</h3>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-2">Billetera descentralizada con soporte multi-chain y UX simplificada para usuarios finales.</p>
+<div class="flex items-center gap-4">
+<a class="text-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">terminal</span></a>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group glass-panel rounded-2xl overflow-hidden glow-hover transition-all duration-500">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A high-tech server room with glowing blue LED indicator lights reflecting off metallic surfaces. The atmosphere is cinematic and slightly mysterious, emphasizing high-performance computing and data processing power. The visual style is dark and futuristic, with a focus on structural symmetry and technical precision, perfectly aligning with a backend and infrastructure engineering aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcRr1g3vQA9hJ4TPsXJQr1TVRq8VT620wO-ikOWGb7QwISjt1dCjxaboqbDbN7rN3zFT81KaDs_9KnVj1wEZBqaOi1djbwe10Z8YgU7-ZXVI5Q7hXURlySgFN9TmPNphNJNMSoefu_YQj7FUiumdILBCA5BuMzgTwLQWG2RfQ8Mtinn71YlULQY757QtoRMJf8ObNsVgEM8GTQ83SGYED0h7mN1Jlr974fst8kUdbXk7shlBWcRcKxUsiglYq0nBVYX-60KgkBenow"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="text-[10px] uppercase tracking-widest font-code-label text-secondary border border-secondary/20 px-2 py-0.5 rounded">Cloud</span>
+<span class="text-[10px] uppercase tracking-widest font-code-label text-primary border border-primary/20 px-2 py-0.5 rounded">DevOps</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">CyberCore Engine</h3>
+<p class="text-on-surface-variant font-body-md mb-6 line-clamp-2">Arquitectura microservicios de alto rendimiento capaz de procesar 1M+ peticiones/min.</p>
+<div class="flex items-center gap-4">
+<a class="text-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">link</span></a>
+<a class="text-primary hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">terminal</span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Services Section -->
+<section class="py-section-gap-desktop bg-surface-container-lowest" id="servicios">
+<div class="max-w-container-max mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">Servicios Core</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg">Soluciones integrales de ingeniería para desafíos modernos.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Frontend -->
+<div class="glass-panel p-10 rounded-3xl group hover:-translate-y-2 transition-all duration-500">
+<div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8 group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-4xl text-secondary">desktop_windows</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Frontend Elite</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Interfaces reactivas de alta fidelidad. Priorizo la accesibilidad, el performance (Core Web Vitals) y la fluidez en cada interacción.</p>
+<ul class="space-y-3 font-code-label text-code-label text-secondary/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> React / Next.js</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> WebGL / Three.js</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Framer Motion</li>
+</ul>
+</div>
+<!-- Backend -->
+<div class="glass-panel p-10 rounded-3xl group hover:-translate-y-2 transition-all duration-500 border-t-2 border-primary/20">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-4xl text-primary">database</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Backend Robusto</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Sistemas distribuidos diseñados para crecer. Seguridad, integridad de datos y latencia mínima como pilares fundamentales.</p>
+<ul class="space-y-3 font-code-label text-code-label text-primary/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Node.js / Go</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> PostgreSQL / Redis</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Microservices Architect</li>
+</ul>
+</div>
+<!-- Architecture -->
+<div class="glass-panel p-10 rounded-3xl group hover:-translate-y-2 transition-all duration-500">
+<div class="w-16 h-16 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-8 group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-4xl text-tertiary">cloud</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Arquitectura &amp; Cloud</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Infraestructura como código (IaC) y automatización CI/CD. Optimizamos costes y garantizamos disponibilidad 99.9%.</p>
+<ul class="space-y-3 font-code-label text-code-label text-tertiary/80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> AWS / GCP Expert</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Kubernetes / Docker</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Terraform / CI-CD</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Contact Section -->
+<section class="py-section-gap-desktop relative" id="contacto">
+<div class="max-w-4xl mx-auto px-6">
+<div class="glass-panel p-12 rounded-[40px] relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 blur-[80px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-12">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-6">Iniciemos algo grande.</h2>
+<p class="text-on-surface-variant font-body-lg mb-10">¿Tienes un proyecto en mente o simplemente quieres saludar? Mi bandeja de entrada siempre está abierta.</p>
+<div class="space-y-6">
+<a class="flex items-center gap-4 group" href="mailto:hello@fulstack.dev">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center group-hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary">mail</span>
+</div>
+<span class="font-code-label text-code-label">hello@fulstack.dev</span>
+</a>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<img alt="Github" class="w-6 h-6 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt44C7jQjdzx9LtA87L-5EyGRZpNisySw73lNCmUKSRVlUIy8v4n4SuMgEgtz2JAP_IjXXmMd7-B_accOw41JjuTcHeVypJ0rm0g2d2QjcF1vcjdydcNzqa1iNufBA-98USktjjaGvqHRx65QQZERhh9Ie6kVI8kMCt0EnuJ6QXC8kLxdvHW-kwleT6S-oNuUuoZMzJtrkdPS9r0f6-QslGR5eVIKHu2TcpTuNJV7FKGtrMnOpp6zDEqv3bqbDwrVosrjI5QW_52lo"/>
+</a>
+<a class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<img alt="LinkedIn" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIppFc_tRqOxpAW8DKJCTpZNPKqAEKBXobOs9M5m7cxeDhce3U171FzCCexp3s-Bj8KIeB384kA7M-po8bmGFyWbflhT_JzUq-oAfjDMqN03ERRzBZvpuDqHgbxecfj1t-9QF3wGlQzaIkvoKTkvqfewuTQX7A0WHuK8KYgTvNqigBe4cRmG1A3ME7JJZxhb3dqGB2N62PEi8pCBGoJpSL-0Ta2bJwjKSnAYuVb0EEbjJ0L3UQqHT-m9B9vIqYLIUgIEamYHBS3YcQ"/>
+</a>
+</div>
+</div>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant mb-2">Nombre</label>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-surface transition-colors rounded-t-lg" type="text"/>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant mb-2">Email</label>
+<input class="w-full bg-surface-container border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-surface transition-colors rounded-t-lg" type="email"/>
+</div>
+<div>
+<label class="block font-code-label text-code-label text-on-surface-variant mb-2">Mensaje</label>
+<textarea class="w-full bg-surface-container border-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-surface transition-colors rounded-t-lg" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl hover:brightness-110 transition-all shadow-lg shadow-primary/20" type="submit">Enviar Mensaje</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-6 py-8 gap-4 max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg text-primary font-bold">FULLSTACK.DEV</div>
+<div class="font-code-label text-code-label text-on-surface-variant">© 2024 Design by DevElite.</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-code-label text-code-label" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-code-label text-code-label" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-code-label text-code-label" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+<script>
+        // Menu Toggle Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('drawer');
+        const drawerContent = drawer.querySelector('div');
+
+        menuToggle.addEventListener('click', () => {
+            drawer.classList.remove('opacity-0', 'pointer-events-none');
+            drawerContent.classList.remove('-translate-x-full');
+        });
+
+        drawer.addEventListener('click', (e) => {
+            if (e.target === drawer) {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                drawerContent.classList.add('-translate-x-full');
+            }
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('top-bar');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-xl');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2', 'shadow-xl');
+            }
+        });
+
+        // Intersection Observer for active nav
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-secondary', 'font-bold');
+                link.classList.add('text-on-surface-variant');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('text-secondary', 'font-bold');
+                    link.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+</body></html>
