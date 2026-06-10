@@ -29,6 +29,7 @@ interface Project {
   color: "secondary" | "primary";
   gradient: string;
   url: string;
+  image: string;
 }
 
 const projects: Project[] = [
@@ -41,6 +42,7 @@ const projects: Project[] = [
     color: "secondary",
     gradient: "from-secondary/20 via-primary/10 to-transparent",
     url: "https://medipet-monteria.vercel.app/",
+    image: "/images/medipet.png",
   },
   {
     id: "ferreteria",
@@ -51,6 +53,7 @@ const projects: Project[] = [
     color: "primary",
     gradient: "from-primary/20 via-secondary/10 to-transparent",
     url: "https://ferreteria-san-carlos.vercel.app/",
+    image: "/images/ferreteria.png",
   },
   {
     id: "energym",
@@ -61,6 +64,7 @@ const projects: Project[] = [
     color: "secondary",
     gradient: "from-secondary/20 via-primary/10 to-transparent",
     url: "https://energym-sancarlos.vercel.app/",
+    image: "/images/energym.png",
   },
 ];
 
@@ -106,14 +110,23 @@ export function Projects() {
                 glow
                 className="group overflow-hidden transition-all duration-500"
               >
-                <div
-                  className={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  <div className="absolute inset-0 bg-surface-container/50 group-hover:bg-surface-container/30 transition-colors duration-500" />
-                  <div className="font-display text-5xl font-bold text-primary/30 group-hover:text-primary/50 transition-all duration-500">
-                    {project.title.charAt(0)}
+                  <div
+                    className={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
+                  >
+                    <div className="absolute inset-0 bg-surface-container/50 group-hover:bg-surface-container/30 transition-colors duration-500" />
+                    <img
+                      src={project.image}
+                      alt={`Preview de ${project.title}`}
+                      className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                </div>
+                </a>
                 <div className="p-8">
                   <div className="flex gap-2 mb-4">
                     {project.tags.map((tag) => (

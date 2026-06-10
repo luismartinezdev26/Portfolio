@@ -12,13 +12,17 @@ export function Footer() {
         </div>
         <div className="flex gap-6">
           <a
-            href="#"
+            href="https://www.linkedin.com/in/luis-martinez-cantero/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-on-surface-variant hover:text-secondary transition-colors font-mono text-code-label tracking-widest"
           >
             LinkedIn
           </a>
           <a
-            href="#"
+            href="https://github.com/luismartinezdev26"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-on-surface-variant hover:text-secondary transition-colors font-mono text-code-label tracking-widest"
           >
             GitHub

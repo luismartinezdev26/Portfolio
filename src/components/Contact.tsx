@@ -70,7 +70,7 @@ export function Contact() {
                     </div>
                     <div>
                       <div className="font-mono text-code-label tracking-widest text-secondary">
-                        l.martinez@email.com
+                        luismartinez.dev26@gmail.com
                       </div>
                       <div className="font-mono text-code-label tracking-widest text-on-surface-variant text-sm">
                         Colombia
@@ -80,14 +80,18 @@ export function Contact() {
 
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href="https://github.com/luismartinezdev26"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors"
                       aria-label="GitHub"
                     >
                       <GitHubIcon className="w-5 h-5 text-on-surface" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/in/luis-martinez-cantero/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors"
                       aria-label="LinkedIn"
                     >
