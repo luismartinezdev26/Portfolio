@@ -28,35 +28,39 @@ interface Project {
   tags: string[];
   color: "secondary" | "primary";
   gradient: string;
+  url: string;
 }
 
 const projects: Project[] = [
   {
-    id: "proyecto-1",
-    title: "Proyecto 01",
+    id: "medipet",
+    title: "MediPet Montería",
     description:
-      "Próximamente estaré compartiendo aquí los proyectos en los que estoy trabajando. Mantente al tanto.",
-    tags: ["En progreso"],
+      "Plataforma web para clínica veterinaria con agendamiento de citas, servicios integrales, testimonios y sistema de emergencias 24/7.",
+    tags: ["Next.js", "Tailwind CSS", "React"],
     color: "secondary",
     gradient: "from-secondary/20 via-primary/10 to-transparent",
+    url: "https://medipet-monteria.vercel.app/",
   },
   {
-    id: "proyecto-2",
-    title: "Proyecto 02",
+    id: "ferreteria",
+    title: "Ferretería Central",
     description:
-      "Próximamente estaré compartiendo aquí los proyectos en los que estoy trabajando. Mantente al tanto.",
-    tags: ["En progreso"],
+      "Sitio web de ferretería con catálogo de productos, categorías, formulario de contacto e integración con WhatsApp.",
+    tags: ["Next.js", "Tailwind CSS", "React"],
     color: "primary",
     gradient: "from-primary/20 via-secondary/10 to-transparent",
+    url: "https://ferreteria-san-carlos.vercel.app/",
   },
   {
-    id: "proyecto-3",
-    title: "Proyecto 03",
+    id: "energym",
+    title: "EnerGym Elite",
     description:
-      "Próximamente estaré compartiendo aquí los proyectos en los que estoy trabajando. Mantente al tanto.",
-    tags: ["En progreso"],
+      "Landing page de gimnasio de alto rendimiento con planes de membresía, horarios de clases, instalaciones y formulario de contacto.",
+    tags: ["Next.js", "Tailwind CSS", "React"],
     color: "secondary",
     gradient: "from-secondary/20 via-primary/10 to-transparent",
+    url: "https://energym-sancarlos.vercel.app/",
   },
 ];
 
@@ -131,18 +135,13 @@ export function Projects() {
                   </p>
                   <div className="flex items-center gap-4">
                     <a
-                      href="#"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-primary hover:text-white transition-colors"
                       aria-label="Demo"
                     >
                       <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-primary hover:text-white transition-colors"
-                      aria-label="GitHub"
-                    >
-                      <GitHubIcon className="w-5 h-5" />
                     </a>
                   </div>
                 </div>
