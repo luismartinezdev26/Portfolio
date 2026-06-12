@@ -31,6 +31,12 @@ export function About() {
 
         <div className="grid lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+            >
             <GlassPanel className="p-8">
               <p className="font-sans text-body-lg leading-relaxed text-on-surface-variant">
                 Ingeniero de Sistemas con experiencia en desarrollo Full Stack y
@@ -41,6 +47,7 @@ export function About() {
                 PostgreSQL, Git, Docker y metodologías ágiles.
               </p>
             </GlassPanel>
+            </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
               {stats.map((stat, index) => (
@@ -65,6 +72,12 @@ export function About() {
           </div>
 
           <div className="lg:col-span-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
             <GlassPanel className="p-8">
               <h3 className="font-display text-headline-lg text-on-surface mb-6 font-semibold">
                 Skills Stack
@@ -79,6 +92,7 @@ export function About() {
                 ))}
               </div>
             </GlassPanel>
+            </motion.div>
           </div>
         </div>
       </div>

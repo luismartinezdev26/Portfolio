@@ -18,10 +18,11 @@ export function Header() {
   const [activeSection, setActiveSection] = useState("inicio");
 
   useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = document.querySelectorAll("section[id]");
       let current = "inicio";
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop;
@@ -32,7 +33,7 @@ export function Header() {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
