@@ -68,7 +68,7 @@ export function Services() {
         <SectionHeader
           title="Servicios Core"
           subtitle="Desarrollo web, integración de sistemas y aseguramiento de calidad."
-          align="center"
+          align="left"
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

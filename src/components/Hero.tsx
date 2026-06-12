@@ -31,7 +31,6 @@ export function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-        <div className="hero-gradient absolute inset-0" />
       </div>
 
       <div className="relative z-10 max-w-container-max mx-auto px-6 w-full">
