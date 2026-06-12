@@ -66,6 +66,17 @@ const projects: Project[] = [
     url: "https://energym-sancarlos.vercel.app/",
     image: "/images/energym.png",
   },
+  {
+    id: "leyendas",
+    title: "Leyendas del Fútbol Colombiano",
+    description:
+      "Sitio web homenaje a los grandes íconos del fútbol colombiano con biografías, estadísticas y galería de momentos históricos.",
+    tags: ["Next.js", "Tailwind CSS", "React"],
+    color: "primary",
+    gradient: "from-primary/20 via-secondary/10 to-transparent",
+    url: "#",
+    image: "/images/leyendas.png",
+  },
 ];
 
 const tagColorMap = {
@@ -97,7 +108,7 @@ export function Projects() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -108,7 +119,7 @@ export function Projects() {
             >
               <GlassPanel
                 glow
-                className="group overflow-hidden transition-all duration-500"
+                className="group overflow-hidden transition-all duration-500 h-full"
               >
                 <a
                   href={project.url}
@@ -117,7 +128,7 @@ export function Projects() {
                   className="block"
                 >
                   <div
-                    className={`h-64 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
+                    className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}
                   >
                     <div className="absolute inset-0 bg-surface-container/50 group-hover:bg-surface-container/30 transition-colors duration-500" />
                     <img
@@ -127,8 +138,8 @@ export function Projects() {
                     />
                   </div>
                 </a>
-                <div className="p-8">
-                  <div className="flex gap-2 mb-4">
+                <div className="p-6">
+                  <div className="flex gap-2 mb-3 flex-wrap">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -140,10 +151,10 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
-                  <h3 className="font-display text-headline-lg text-on-surface mb-3 font-semibold">
+                  <h3 className="font-display text-headline-lg text-on-surface mb-2 font-semibold">
                     {project.title}
                   </h3>
-                  <p className="text-on-surface-variant font-sans text-body-md mb-6 line-clamp-2">
+                  <p className="text-on-surface-variant font-sans text-body-md mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   <div className="flex items-center gap-4">
